@@ -66,7 +66,7 @@ div.root {
     row-gap: 10px;
 }
 
-div.game {
+a.game {
     display: flex;
     align-items: center;
     column-gap: 0.75rem;
@@ -74,35 +74,37 @@ div.game {
     border-radius: 0.375rem;
     background-image: linear-gradient(to bottom, #201F27, #2f2e35);
     border-bottom: 2px solid #FFFEFF;
+    color: #ffffff;
+    text-decoration: none;
 }
 
-div.game.unread{
+a.game.unread{
     background-image: linear-gradient(to bottom, #2a9d8f, #2f2e35);
 }
 
-div.game div.icon {
+a.game div.icon {
     min-width: 56px;
     max-width: 56px;
 }
 
-div.game div.icon img {
+a.game div.icon img {
     width: 100%;
     border-radius: 0.375rem;
 }
 
-div.game div.content {
+a.game div.content {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-div.game div.content div.main div.title-wrapper {
+a.game div.content div.main div.title-wrapper {
     display: flex;
     column-gap: 5px;
     align-items: center;
 }
 
-div.game div.content div.main div.title {
+a.game div.content div.main div.title {
     max-width: 210px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -110,12 +112,12 @@ div.game div.content div.main div.title {
     margin-bottom: 2px;
 }
 
-div.game div.content div.main div.trophies {
+a.game div.content div.main div.trophies {
     display: flex;
     column-gap: 0.6rem;
 }
 
-div.game div.content div.main div.trophies .trophy {
+a.game div.content div.main div.trophies .trophy {
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -126,23 +128,23 @@ div.game div.content div.main div.trophies .trophy {
     font-size: 12px;
 }
 
-div.game div.content div.main div.trophies .trophy.trophy--platinum {
+a.game div.content div.main div.trophies .trophy.trophy--platinum {
     background-image: url('/images/assets/platinum.png');
 }
 
-div.game div.content div.main div.trophies .trophy.trophy--gold {
+a.game div.content div.main div.trophies .trophy.trophy--gold {
     background-image: url('/images/assets/gold.png');
 }
 
-div.game div.content div.main div.trophies .trophy.trophy--silver {
+a.game div.content div.main div.trophies .trophy.trophy--silver {
     background-image: url('/images/assets/silver.png');
 }
 
-div.game div.content div.main div.trophies .trophy.trophy--bronze {
+a.game div.content div.main div.trophies .trophy.trophy--bronze {
     background-image: url('/images/assets/bronze.png');
 }
 
-div.game div.content div.meta {
+a.game div.content div.meta {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,13 +152,13 @@ div.game div.content div.meta {
     font-size: 12px;
 }
 
-div.game div.content div.meta>div {
+a.game div.content div.meta>div {
     display: flex;
     align-items: center;
     column-gap: 4px;
 }
 
-div.game div.content div.meta>div img {
+a.game div.content div.meta>div img {
     height: 15px;
 }
 

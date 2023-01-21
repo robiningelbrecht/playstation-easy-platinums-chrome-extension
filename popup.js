@@ -32,54 +32,57 @@ $h1.setAttribute(
 
 const template = document.createElement("template");
 template.innerHTML = `
-<div class="game">
-<div class="icon">
-    <img alt="icon" loading="lazy" />
-</div>
-<div class="content">
-    <div class="main">
-        <div class="title-wrapper">
-            <div class="title"></div>
-            <kbd></kbd>
-        </div>
-        <div class="trophies">
-            <div class="trophy trophy--platinum">
-                <span>1</span>
-            </div>
-            <div class="trophy trophy--gold">
-                <span></span>
-            </div>
-            <div class="trophy trophy--silver">
-                <span></span>
-            </div>
-            <div class="trophy trophy--bronze">
-                <span></span>
-            </div>
-        </div>
-    </div>
-    <div class="meta">
-        <div class="time">
-            <img src="/images/assets/time.svg" alt="time" />
-            <span></span>
-        </div>
-        <div class="price">
-            <img src="/images/assets/price.svg" alt="price" />
-            <span></span>
-        </div>
-        <div class="points">
-            <img src="/images/assets/arrow-up.svg" alt="points" />
-            <span>1350 points</span>
-        </div>
-    </div>
-</div>
-</div>
+<a class="game" target="_blank">
+  <div class="icon">
+      <img alt="icon" loading="lazy" />
+  </div>
+  <div class="content">
+      <div class="main">
+          <div class="title-wrapper">
+              <div class="title"></div>
+              <kbd></kbd>
+          </div>
+          <div class="trophies">
+              <div class="trophy trophy--platinum">
+                  <span>1</span>
+              </div>
+              <div class="trophy trophy--gold">
+                  <span></span>
+              </div>
+              <div class="trophy trophy--silver">
+                  <span></span>
+              </div>
+              <div class="trophy trophy--bronze">
+                  <span></span>
+              </div>
+          </div>
+      </div>
+      <div class="meta">
+          <div class="time">
+              <img src="/images/assets/time.svg" alt="time" />
+              <span></span>
+          </div>
+          <div class="price">
+              <img src="/images/assets/price.svg" alt="price" />
+              <span></span>
+          </div>
+          <div class="points">
+              <img src="/images/assets/arrow-up.svg" alt="points" />
+              <span>1350 points</span>
+          </div>
+      </div>
+  </div>
+</a>
 `;
 
 $root.innerHTML = "";
 json.games.forEach((game) => {
   const $game = template.content.cloneNode(true);
+  const $gameRootNode = $game.getRootNode().querySelector(".game");
+  $gameRootNode.setAttribute("href", game.uri);
+
   if (dateLastChecked < new Date(game.addedOn.date)) {
-    $game.getRootNode().querySelector(".game").classList.add("unread");
+    $gameRootNode.classList.add("unread");
   }
 
   const $icon = $game.querySelector("div.icon img");

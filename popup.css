@@ -76,6 +76,10 @@ div.game {
     border-bottom: 2px solid #FFFEFF;
 }
 
+div.game.unread{
+    background-image: linear-gradient(to bottom, #2a9d8f, #2f2e35);
+}
+
 div.game div.icon {
     min-width: 56px;
     max-width: 56px;

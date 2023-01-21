@@ -7,8 +7,10 @@ if (response.status !== 200) {
   throw new Error(message);
 }
 
-const settings = { dateLastChecked: new Date().toString() };
-await chrome.storage.sync.set({ settings: settings });
+const { settings } = await chrome.storage.sync.get("settings");
+const dateLastChecked = new Date(parseInt(settings.dateLastChecked));
+
+await chrome.storage.sync.set({ settings: { dateLastChecked: Date.now() } });
 await chrome.action.setBadgeText({
   text: "",
 });
@@ -32,7 +34,7 @@ const template = document.createElement("template");
 template.innerHTML = `
 <div class="game">
 <div class="icon">
-    <img alt="icon" />
+    <img alt="icon" loading="lazy" />
 </div>
 <div class="content">
     <div class="main">
@@ -76,6 +78,9 @@ template.innerHTML = `
 $root.innerHTML = "";
 json.games.forEach((game) => {
   const $game = template.content.cloneNode(true);
+  if (dateLastChecked < new Date(game.addedOn.date)) {
+    $game.getRootNode().querySelector(".game").classList.add("unread");
+  }
 
   const $icon = $game.querySelector("div.icon img");
   $icon.setAttribute(

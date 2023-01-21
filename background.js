@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(async () => {
-  const settings = { dateLastChecked: new Date().toString() };
+  const settings = { dateLastChecked: Date.now() };
   await setChromeStorageSync({ settings: settings });
 });
 
@@ -10,7 +10,7 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
   const json = await response.json();
 
   const settings = await getChromeStorageSync("settings");
-  const dateLastChecked = new Date(settings.dateLastChecked);
+  const dateLastChecked = new Date(parseInt(settings.dateLastChecked));
   const dateLastAddedGame = new Date(json.lastUpdate.date);
 
   if (dateLastChecked >= dateLastAddedGame) {

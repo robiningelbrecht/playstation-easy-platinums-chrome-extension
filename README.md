@@ -7,7 +7,7 @@
 
 ---
 
-Always stay up to date with new easy obtainable platinum throphies. 
+Always stay up to date with new easy obtainable platinum trophies. 
 The extension will notify you when there are new trophies to grind.
 
 <p align="center">

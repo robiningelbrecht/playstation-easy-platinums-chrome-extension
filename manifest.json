@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PlayStation easy platinum trophies",
-  "description": "A collection of easy and quick (< 1h) obtainable PlayStation platinum trophies. It is updated daily.",
+  "description": "Always stay up to date with new easy obtainable platinum trophies.",
   "version": "0.0.0.1",
   "icons": {
     "16": "images/icon-16.png",

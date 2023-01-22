@@ -65,7 +65,7 @@ div.filters a {
     color: #539bf5;
 }
 
-div.filters a.active {
+div.filters a.mixitup-control-active {
     color: #ffffff;
 }
 

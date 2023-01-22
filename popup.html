@@ -12,7 +12,9 @@
         <span>PlayStation easy platinums</span>
     </h1>
     <div class="filters">
-        Platform : <kbd><a href="#" data-platform="ALL" class="active">All</a></kbd> | <kbd><a href="#" data-platform="PS4">PS4</a></kbd> | <kbd><a href="#" data-platform="PS5">PS5</a></kbd>
+        Platform : <kbd><a href="#" data-filter="all" class="active">All</a></kbd> | 
+        <kbd><a href="#" data-filter='a[data-platform="PS4"]'>PS4</a></kbd> | 
+        <kbd><a href="#" data-filter='a[data-platform="PS5"]'>PS5</a></kbd>
     </div>
     <div class="root">
         <div class="loader">
@@ -24,6 +26,7 @@
             </div>
         </div>
     </div>
+    <script src="mixitup.js"></script>
     <script defer src="popup.js" type="module"></script>
 </body>
 

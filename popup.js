@@ -126,22 +126,11 @@ json.games.forEach((game) => {
   $root.appendChild($game);
 });
 
-const $filters = document.querySelectorAll(".filters a");
-$filters.forEach(($filter) => {
-  $filter.addEventListener("click", () => {
-    const platformFilter = $filter.getAttribute("data-platform");
-    $filters.forEach(($element) => {
-      $element.classList.remove("active");
-    });
-    $filter.classList.add("active");
-
-    $root.querySelectorAll("a[data-platform]").forEach(($element) => {
-      const platform = $element.getAttribute("data-platform");
-      $element.classList.remove("hide");
-
-      if (platformFilter !== "ALL" && platform !== platformFilter) {
-        $element.classList.add("hide");
-      }
-    });
-  });
+mixitup($root, {
+  selectors: {
+      target: '.game'
+  },
+  animation: {
+      duration: 300
+  }
 });

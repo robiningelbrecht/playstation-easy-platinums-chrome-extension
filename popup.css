@@ -60,6 +60,15 @@ kbd {
     margin-right: 4px;
 }
 
+div.filters a {
+    text-decoration: none;
+    color: #539bf5;
+}
+
+div.filters a.active {
+    color: #ffffff;
+}
+
 div.root {
     display: flex;
     flex-direction: column;
@@ -78,7 +87,11 @@ a.game {
     text-decoration: none;
 }
 
-a.game.unread{
+a.game.hide {
+   display: none;
+}
+
+a.game.unread {
     background-image: linear-gradient(to bottom, #2a9d8f, #2f2e35);
 }
 
@@ -163,7 +176,7 @@ a.game div.content div.meta>div img {
 }
 
 /* LOADER */
-div.loader{
+div.loader {
     display: flex;
     justify-content: center;
 }

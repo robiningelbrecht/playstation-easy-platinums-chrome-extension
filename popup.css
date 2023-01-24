@@ -73,6 +73,10 @@ kbd {
     margin-right: 4px;
 }
 
+div.filters{
+    margin-bottom: 5px;
+}
+
 div.filters a {
     text-decoration: none;
     color: #539bf5;
